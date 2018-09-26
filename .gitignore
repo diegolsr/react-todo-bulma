@@ -10,7 +10,8 @@
 /build
 
 # configuration
-/server/config
+/server/config/*.config.*
+!/server/config/*.example.*
 
 # misc
 .DS_Store
