@@ -1,7 +1,7 @@
 const express = require('express');
 const Task = express.Router();
 
-const controllers = require('../controllers/Task')
+const controllers = require('../controllers/Task');
 
 Task.route('/')
     .post(controllers.add)
