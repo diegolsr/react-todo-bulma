@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const TaskRoutes = require('./routes/Task');
 const mongoose = require('mongoose');
 const config = require('./config/keys.config.js');
-const TaskRoutes = require('./routes/Task');
 
 // Create the express application
 const app = express();
