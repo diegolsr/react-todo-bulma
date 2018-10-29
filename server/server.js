@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const TaskRoutes = require('./routes/Task');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const config = require('./config/keys.config.js');
 
 // Create the express application
@@ -17,6 +18,7 @@ mongoose.set('useFindAndModify', false);
 
 // Parses the body of a request into Json making it accessible in req.body
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/api/tasks', TaskRoutes);
 

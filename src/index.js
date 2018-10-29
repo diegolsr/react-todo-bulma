@@ -1,15 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-// import styling
+import { fetchAllTasks } from './actions/taskActions';
+
 import './style/theme.css';
 
-// import Components
 import App from './App';
 
-ReactDOM.render(
-    <App />,
+store.dispatch(fetchAllTasks());
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
 

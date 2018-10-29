@@ -1,9 +1,18 @@
 import React from 'react';
 
+import CreateTaskInput from './box/CreateTaskInput';
+import Menu from './box/Menu';
+import TaskList from './box/TaskList';
+import Footer from './box/Footer';
+
 const Box = () => (
     <div className="box">
-        <h1>Teste</h1>
+        <CreateTaskInput />
+        <Menu />
+        <TaskList />
+        <Footer />
     </div>
 );
+
 
 export default Box;
