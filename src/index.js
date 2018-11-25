@@ -1,20 +1,37 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+
+// import redux store
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-import { fetchAllTasks } from './actions/taskActions';
+// Actions
+import { getAllTasks } from './actions/taskActions';
 
+// Css and styles
 import './style/theme.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSyncAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircle,
+    faCheckCircle,
+} from '@fortawesome/free-regular-svg-icons';
 
-import App from './App';
+// Components
+import Layout from './pages/Layout';
 
-store.dispatch(fetchAllTasks());
+library.add(faCircle, faCheckCircle, faSyncAlt, faPlus);
+
+const { tasks } = store.getState().taskReducer;
+
+if (tasks.length === 0) {
+    store.dispatch(getAllTasks());
+}
 
 render(
     <Provider store={store}>
-        <App />
+        <Layout />
     </Provider>,
     document.getElementById('root')
 );

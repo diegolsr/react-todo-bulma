@@ -1,89 +1,88 @@
 @import "bulma/sass/utilities/initial-variables";
-.button:hover {
-    border-color: hsl(141, 71%, 48%);
+// Input
+.is-task-title {
+    & .input {
+        box-shadow: 0 3px 12px -1px rgba(#121621, .1);
+        border: 1px solid hsl(0, 0%, 90%);
+        font-weight: bold;
+        &::placeholder {
+            font-weight: bold;
+            color: hsl(0, 0%, 46%);
+        }
+        &:hover {
+            border-color: #b5b5b5;
+        }
+    }
 }
 
-.column.is-not-margin-right {
-    padding-right: 0;
+.input.fit-content {
+    width: fit-content;
 }
 
-.column.is-not-margin-left {
-    padding-left: 0;
+// Columns
+.column {
+    & .box {
+        border-radius: 1rem;
+        padding: 2rem 2rem 2rem 2rem;
+        box-shadow: 8px 14px 38px rgba(39, 44, 49, .3);
+    }
+    &.is-centered {
+        display: flex;
+        align-items: center;
+    }
 }
 
+// Button
 .button.is-tiny {
     font-size: .5rem;
 }
 
-.checkbox {
-    vertical-align: center;
-    margin-top: 50%;
-}
-
-.column.is-centered {
-    display: flex;
-    align-items: center;
-}
-
-.delete {
-    vertical-align: center;
-}
-
-.tag:not(body) {
-    font-size: .7rem;
-}
-
-.tabs ul {
-    border-bottom-color: #dbdbdb !important;
-    border-bottom-style: solid !important;
-    border-bottom-width: 1px !important;
-}
-
-.level {
-    padding-bottom: 0 !important;
-    padding-top: 1rem;
-    color: hsl(0, 0%, 70%);
-}
-
-.column .box {
-    border-radius: 1rem;
-    padding: 2rem 2rem 1rem 2rem;
-    box-shadow: 8px 14px 38px rgba(39, 44, 49, .3);
-}
-
-.input {
-    box-shadow: 0 4px 12px -1px rgba(#121621, .1);
-    border: 1px solid hsl(0, 0%, 90%);
-    font-weight: bold;
-    &::placeholder {
-        font-weight: bold;
-        color: hsl(0, 0%, 46%);
+// Tabs
+.tabs {
+    margin-bottom: 0 !important;
+    & ul {
+        border-bottom-color: #dbdbdb !important;
+        border-bottom-style: solid !important;
+        border-bottom-width: 1px !important;
     }
 }
 
+// Level
+.level {
+    padding-top: .75rem;
+}
+
+// Task List
 .is-task-list {
-    margin-top: 1.5rem;
     & .box {
-        padding: 1rem 1rem 1rem 1.2rem;
+        padding: 0rem 0rem 0rem 0rem;
         color: hsl(0, 0%, 46%);
-        border: 1px solid hsl(0, 0%, 90%);
+        border: none;
         border-top: 0;
-        border-bottom: 0; // box-shadow: 0 4px 12px -1px rgba(#121621, .1) !important;
+        border-bottom: 0;
         border-radius: 0;
         margin-bottom: 0;
+        box-shadow: none;
         &:first-child {
-            padding-top: 2rem;
+            padding-top: 1.2rem;
             border-radius: .3rem .3rem 0 0;
-            border-top: 1px solid hsl(0, 0%, 90%);
         }
         &:last-child {
-            padding-bottom: 2rem;
             border-radius: 0 0 .3rem .3rem;
-            border-bottom: 1px solid hsl(0, 0%, 90%);
         }
-        &:only-child {
-            border-radius: .3rem .3rem .3rem .3rem;
-            border: 1px solid hsl(0, 0%, 90%);
-        }
+        &:only-child {}
     }
+}
+
+// Notification
+.notification {
+    font-size: .75rem;
+    padding: .75rem;
+    position: fixed;
+    width: fit-content;
+    max-width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 5%;
 }

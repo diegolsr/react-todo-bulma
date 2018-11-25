@@ -8,6 +8,7 @@ Task.route('/')
     .get(controllers.getAll);
 
 Task.route('/:id')
+    .get(controllers.getTaskById)
     .delete(controllers.delete)
     .put(controllers.update);
 
